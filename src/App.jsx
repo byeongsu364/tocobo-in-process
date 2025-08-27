@@ -6,6 +6,7 @@ import Reviews from "./sections/Reviews";
 import Cta from "./sections/Cta";
 import Footer from "./components/Footer";
 import TopBanner from "./components/TopBanner";
+import TopBtn from "./components/TopBtn";
 import { useState } from "react";
 import "./styles/main.scss";
 
@@ -19,6 +20,7 @@ export default function App() {
 
   return (
     <div className={`app-container ${topBanner}`}>
+      <TopBtn />
       <TopBanner onClick={upTopBanner}/>
       <Header />
       <main>
