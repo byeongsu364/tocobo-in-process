@@ -12,15 +12,14 @@ header {
     top: 4rem;
     width: 100%;
     z-index: 4;
-    background: #fff;
+    transition: top .3s ease;
+    height: 10.5rem;
 
     .inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 2rem;
         position: relative;
-        margin: 0 auto;
         width: 95%;
     }
 
@@ -29,7 +28,7 @@ header {
 
         ul {
             display: flex;
-            gap: 1.5rem;
+            gap: .8rem;
             list-style: none;
             margin: 0;
             padding: 0;
@@ -37,12 +36,21 @@ header {
             li a {
                 text-decoration: none;
                 font-size: 18px;
-                color: #DC272D;
+                color: var(--primary);
+                position: relative;
                 letter-spacing: 0;
-                line-height: 105px;
+
                 margin-right: 40px;
                 display: block;
                 font-weight: normal;
+
+                &:after {
+                    display: block;
+                    content: "";
+                    width: 100%;
+                    height: .1rem;
+                    background-color: var(--primary);
+                }
 
                 &:hover {
                     color: #000;
