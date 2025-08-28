@@ -1,20 +1,25 @@
-import React,{useCallback} from 'react'
+import { useCallback } from "react";
 
-export default  function useSmoothScroll(){
- 
-    const scrollTo=useCallback((id)=>{
+export default function useSmoothScroll(defaultOffset = 0) {
+  const scrollTo = useCallback((id, useOffset = false) => {
+    const el = document.getElementById(id);
 
-        const el =document.getElementById(id)
+    if (el) {
+      if (useOffset || defaultOffset > 0) {
+        const y = el.getBoundingClientRect().top + window.scrollY - defaultOffset;
 
-        if(el){
-            el.scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            })
-        }
-    },[])
- 
- 
-    return scrollTo
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+      } else {
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  }, [defaultOffset]);
+
+  return scrollTo;
 }
-

@@ -35,7 +35,7 @@ export const heroSlides = [
   },
   {
     id: "hs-3",
-    title: "Scent-Free, Worry-Free",
+    title: "Scent-Free,<br> Worry-Free",
     subtitle: "Sensitive Skin Friendly",
     desc: "민감 피부를 위한 무향 포뮬러",
     ctaText: "스타터 키트 보러가기",

@@ -1,26 +1,37 @@
 .TopBanner {
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
-  }
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 13px;
+    }
 }
 
 header {
     position: fixed;
-    margin-top: 20px;
+    padding: 20px;
     top: 4rem;
     width: 100%;
     z-index: 4;
     transition: top .3s ease;
     height: 10.5rem;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+
+    &.scrolled {
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 0.61),
+                rgba(255, 255, 255, 0.0));
+        border-bottom: none;
+    }
 
     .inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-        width: 95%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: 160rem !important;
     }
 
     nav {
@@ -47,13 +58,16 @@ header {
                 &:after {
                     display: block;
                     content: "";
-                    width: 100%;
+                    width: 0%;
                     height: .1rem;
                     background-color: var(--primary);
+                    left: 0;
+                    position: absolute;
+                    transition: width .3s ease;
                 }
 
-                &:hover {
-                    color: #000;
+                &:hover:after {
+                    width: 100%;
                 }
             }
         }

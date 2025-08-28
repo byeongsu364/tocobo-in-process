@@ -7,6 +7,7 @@ import Cta from "./sections/Cta";
 import Footer from "./components/Footer";
 import TopBanner from "./components/TopBanner";
 import TopBtn from "./components/TopBtn";
+import Hello from "./sections/Hello";
 import { useState } from "react";
 import "./styles/main.scss";
 
@@ -25,10 +26,11 @@ export default function App() {
       <Header />
       <main>
         <section id="Hero" className="Section"><Hero /></section>
+        <section id="Cta" className="Section"><Cta /></section>
+        <section id="Reviews" className="Section"><Hello /></section>
         <section id="Brand" className="Section"><Brand /></section>
         <section id="Products" className="Section"><Products /></section>
         <section id="Reviews" className="Section"><Reviews /></section>
-        <section id="Cta" className="Section"><Cta /></section>
       </main>
       <Footer />
     </div>
