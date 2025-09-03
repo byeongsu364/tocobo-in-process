@@ -1,26 +1,28 @@
-import React from "react";
-import { categories } from "../util/cta";
-import "../styles/sections/Cta.scss";
-
+import React from 'react'
+import { categories } from '../util/cta'
+import "../styles/sections/cta.scss"
 const Cta = () => {
   return (
-    <section id="cta" className="cta">
-      <div className="inner">
-        <ul className="cta-list">
-          {categories.map((cat) => (
-            <li key={cat.id}>
-              <a href={cat.href}>
-                <div className="img-wrap">
-                  <img src={cat.img.src} alt={cat.img.alt} />
-                </div>
-                <span className="name">{cat.name}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-};
+    <div className='inner cta-inner'>
+      <ul className="cta-list">
+        {categories.map((cta) => (
 
-export default Cta;
+          <li key={cta.id}>
+            <a href={cta.href}>
+
+              <div className="img-wrap" style={{ backgroundImage: `url(${cta.img.src})` }}>
+                {/* <img src="" alt="" /> */}
+              </div>
+              <p>
+                {cta.name}
+
+              </p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default Cta

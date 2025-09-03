@@ -1,34 +1,40 @@
-.fixed-btns {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  z-index: 200;
+.fixed-top {
+    position: fixed;
+    z-index: 5;
+    right: 2rem;
+    bottom: 2rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .3s .5s;
+    transform: translateY(3rem);
 
-  .top-btn {
-    width: 60px;
-    height: 60px;
-    border: none;
-    border-radius: 50%;
-    background: #00a3e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    >* {
+        display: block;
 
-    img {
-      width: 24px;
-      height: 24px;
-      filter: brightness(0) invert(1);
     }
 
-    &:hover {
-      background: #66c6f0;
+    .top-btn {
+        width: 5.6rem;
+        height: 5.6rem;
+        background: var(--secondary) no-repeat url(/img/icon_top.svg) center/40% auto;
+        border-radius: 50%;
+        font-size: 0;
     }
-  }
 
+    .talk-btn {
+        width: 5.6rem;
+        height: 5.6rem;
+        background: url(/img/icon_talk.svg) no-repeat center/contain;
+        margin: 1rem 0;
+        font-size: 1.5rem;
+        color: var(--bg);
+        line-height: 5.6rem;
+    }
+
+    p {
+        color: var(--primary);
+        font-family: "Source Serif 4", serif;
+        font-style: italic;
+        font-size: 600;
+    }
 }

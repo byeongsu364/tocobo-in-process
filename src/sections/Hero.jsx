@@ -37,6 +37,7 @@ const Hero = () => {
                 <h2 className='tit'
                 dangerouslySetInnerHTML={{ __html: slide.title }}
                 />
+                 
                 <p className="txt">
                   {slide.subtitle}
                 </p>
@@ -47,11 +48,13 @@ const Hero = () => {
             </div>
           </SwiperSlide>
         ))}
-        <div className="hero-nav">
-          <div className="arr-prev">prev</div>
-          <div className="swiper-pagination"></div>
-          <div className="arr-next">next</div>
-        </div>
+
+     <div className="hero-nav">
+      <div className="arr-prev">prev</div>
+      <div className="swiper-pagination"></div>
+      <div className="arr-next">next</div>
+     </div>
+
       </Swiper>
     </div>
   )

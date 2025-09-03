@@ -50,7 +50,7 @@ export const heroSlides = [
   },
   {
     id: "hs-4",
-    title: "Eco-Conscious Beauty",
+    title: "Eco-Conscious<br> Beauty",
     subtitle: "Vegan & Cruelty-Free",
     desc: "지속 가능성을 생각한 깔끔한 선택",
     ctaText: "혜택보러가기",

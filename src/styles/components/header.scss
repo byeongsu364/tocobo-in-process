@@ -1,63 +1,27 @@
-.TopBanner {
-    a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 13px;
-    }
-}
-
 header {
     position: fixed;
-    padding: 20px;
+    z-index: 4;
     top: 4rem;
     width: 100%;
-    z-index: 4;
-    transition: top .3s ease;
     height: 10.5rem;
-    transition: background 0.3s ease, backdrop-filter 0.3s ease;
-
-    &.scrolled {
-        background: linear-gradient(to bottom,
-                rgba(255, 255, 255, 0.61),
-                rgba(255, 255, 255, 0.0));
-        border-bottom: none;
-    }
-
+    transition: top .3s ease;
     .inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        position: relative;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
         max-width: 160rem !important;
-    }
-
-    nav {
-        flex: 1;
-
-        ul {
+        nav ul {
             display: flex;
-            gap: .8rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-
-            li a {
-                text-decoration: none;
-                font-size: 18px;
+            gap: 2rem;
+            a{
+                display: block;
+                font-size: 1.8rem;
                 color: var(--primary);
                 position: relative;
-                letter-spacing: 0;
-
-                margin-right: 40px;
-                display: block;
-                font-weight: normal;
-
+                padding: 0 .5rem;
                 &:after {
                     display: block;
-                    content: "";
+                    content:"";
                     width: 0%;
                     height: .1rem;
                     background-color: var(--primary);
@@ -65,36 +29,20 @@ header {
                     position: absolute;
                     transition: width .3s ease;
                 }
-
-                &:hover:after {
+                &:hover:after{
                     width: 100%;
                 }
             }
         }
-    }
-
-    .tit {
-        flex: 0;
-        text-align: center;
-
-        img {
-            display: inline-block;
-            height: 40px;
+        h1.tit {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
-    }
+        .util-lst{
+            display: flex;
+            gap: 1.2rem;
 
-    .util-menu {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        gap: 5.2rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        img {
-            width: 30px;
-            height: 30px;
         }
     }
 }
