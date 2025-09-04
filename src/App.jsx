@@ -1,4 +1,3 @@
-
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Hero from "./sections/Hero"
@@ -54,8 +53,8 @@ function App() {
           <Collection />
         </section>
         <section id="Skincare" className="Section">
-          </section>
           <Skincare />
+          </section>
         <section id="Instar" className="Section">
           <Instargram />
         </section>
