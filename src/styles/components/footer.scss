@@ -46,6 +46,7 @@ footer {
 
         .right {
             flex: 1;
+
             .cs-box a {
                 display: block;
                 font-size: 3rem;
@@ -53,11 +54,13 @@ footer {
                 margin-bottom: 1.7rem;
                 font-weight: 400;
             }
+
             p {
                 font-size: 1.4rem;
                 color: #5b5b5b;
                 line-height: 2.2rem;
             }
+
             .talk-btn {
                 border: .1rem solid var(--primary);
                 display: inline-block;
@@ -68,6 +71,10 @@ footer {
                 color: var(--primary);
                 transition: all .3s;
             }
+
+            .footer-legal {
+                display: none;
+            }
         }
 
         h4 {
@@ -77,6 +84,21 @@ footer {
             font-style: italic;
             font-weight: 400;
             margin-bottom: 2.5rem;
+        }
+
+        .footer-legal {
+            p {
+                color: var(--primary);
+                font-size: 1.2rem;
+                padding: 3rem 0 6rem;
+            }
+
+            .legal-links a {
+                display: inline-block;
+                margin-right: 2rem;
+                font-size: 1.3rem;
+                color: #6f6f6f;
+            }
         }
     }
 }

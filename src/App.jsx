@@ -10,11 +10,19 @@ import Hello from "./sections/Hello"
 import Collection from "./sections/Collection"
 import Instargram from "./sections/Instargram"
 import Skincare from "./sections/Skincare"
+import AOS from "aos"
+import "aos/dist/aos.css"
 function App() {
 
   const [topBanner, setTopBanner] = useState("")
-
   const [isScrolled,setIsScrolled]=useState(false)
+  const[mNavOpen, setMNavOpen] = useState(false)
+
+  useEffect(()=>{
+    AOS.init({
+
+    });
+  },[])
 
 
   useEffect(()=>{
@@ -28,6 +36,23 @@ function App() {
 
   })
 
+  useEffect(()=>{
+    document.body.style.overflow = mNavOpen? 'hidden':''
+  },[mNavOpen])
+
+  useEffect(()=>{
+    const handleResize=()=>{
+      if(window.innerWidth>1111) setMNavOpen(false)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return ()=>window.removeEventListener('resize', handleResize)
+  },[])
+
+  const handleNavOpen = ()=>setMNavOpen(true)
+  const handleNavClose = ()=>setMNavOpen(false)
 
   const upTopBanner = () => {
     setTopBanner("up")
@@ -37,7 +62,11 @@ function App() {
     <div className={`app-container  ${topBanner} ${isScrolled? "scrolled":""}`}>
       <TopBtn />
       <TopBanner onClick={upTopBanner} />
-      <Header />
+      <Header 
+        mNavOpen = {mNavOpen}
+        onNavOpen = {handleNavOpen}
+        onNavClose = {handleNavClose}
+      />
       <main>
         <section id="Hero" className="Section">
           <Hero />

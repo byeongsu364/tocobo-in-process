@@ -4,13 +4,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import "../styles/sections/skincare.scss"
+
 const Skincare = () => {
     return (
-        <section className="Skincare">
+        <section id="Skincare" className="Skincare"> 
             <div className='inner skincare-inner'>
                 <div className="t-wrap">
-
-                    <h2 className="tit" >
+                    <h2 className="tit">
                         Vegan Skincare
                     </h2>
                     <p className="txt">
