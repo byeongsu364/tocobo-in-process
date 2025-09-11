@@ -12,7 +12,11 @@ const MNav = ({ handleClick, onNavClose }) => {
                 <Util />
                 <a
                     href="#"
-                    onClick={onNavClose}
+                    onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        onNavClose()
+                    }}
                     className='m-close-btn'
                 >
                     <img src="/img/icon_search_close.png" alt="icon" />

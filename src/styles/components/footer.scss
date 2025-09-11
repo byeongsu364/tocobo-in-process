@@ -100,5 +100,18 @@ footer {
                 color: #6f6f6f;
             }
         }
+
+        .sns-links {
+            display: flex;
+            gap: 1.3rem;
+            list-style: none;
+            padding: 0;
+            margin-top: 3rem;
+        }
+
+        .sns-links li {
+            display: flex;
+            align-items: center;
+        }
     }
 }

@@ -1,7 +1,11 @@
 import React from 'react'
 import instar from "../util/instar"
 import "../styles/sections/instar.scss"
+
 const Instargram = () => {
+
+    const stagger = (base, idx, step = 100) => base + idx * step
+
     return (
         <div className='inner instar-inner'>
             <div className="t-wrap">
@@ -13,13 +17,16 @@ const Instargram = () => {
                 </p>
             </div>
             <ul className="instar-lst">
-                {instar.map((i) => (
-
-                    <li key={i.id}>
+                {instar.map((i, index) => (  
+                    <li key={i.id}
+                        data-aos="fade-up"
+                        data-aos-delay={stagger(1000, index, 100)}
+                    >
                         <a
                             style={{ backgroundImage: `url(${i.image})` }}
-                            alt={i.alt}
-                            href={i.link}>
+                            href={i.link}
+                            aria-label={i.alt}
+                        >
                             {i.alt}
                         </a>
                     </li>
