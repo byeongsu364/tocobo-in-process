@@ -1,6 +1,6 @@
 import React from 'react'
 import { categories } from '../util/cta'
-import "../styles/sections/cta.scss"
+import "../styles/sections/Cta.scss"
 const Cta = () => {
 
 const stagger = (base,idx,step=100)=>base+idx*step
