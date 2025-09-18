@@ -1,6 +1,12 @@
 .hello-inner {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width:1111px){
+        flex-direction: column;
+        gap: 3rem;
+    }
+
     .img-wrap {
         overflow: hidden;
         border-radius: 2rem;
