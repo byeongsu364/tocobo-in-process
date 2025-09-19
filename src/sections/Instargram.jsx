@@ -17,7 +17,7 @@ const Instargram = () => {
                 </p>
             </div>
             <ul className="instar-lst">
-                {instar.map((i, index) => (  
+                {instar.map((i, index) => (
                     <li key={i.id}
                         data-aos="fade-up"
                         data-aos-delay={stagger(1000, index, 100)}
@@ -28,6 +28,11 @@ const Instargram = () => {
                             aria-label={i.alt}
                         >
                             {i.alt}
+
+                            {/* 뱃지 추가 */}
+                            <div className="badge">
+                                <img src="/images/badge.png" alt="badge" />
+                            </div>
                         </a>
                     </li>
                 ))}
