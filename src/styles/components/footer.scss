@@ -132,6 +132,9 @@ footer {
                         height: 0;
                         overflow: hidden;
                         transition: height 0.4s ease;
+                        .cs-box{
+                            margin-top: 2rem;
+                        }
                     }
                     &.open {
                         h4{
@@ -166,6 +169,12 @@ footer {
                 font-size: 1.3rem;
                 color: #6f6f6f;
             }
+        }
+        .sns-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            color: var(--primary);
         }
     }
 }

@@ -1,38 +1,42 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { logoData, companyData, customerCenterData, footerMenus, socialLinks, footerLegal } from "../util/footer";
 
 import "../styles/components/footer.scss"
 
 const Footer = () => {
 
-  const [isOpen, setIsOpen]=useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const hiddenContentRef = useRef(null)
 
-  useEffect(()=>{
-    const handleResize = ()=>{
-      setIsOpen(window.innerWidth>=1111)
+  useEffect(() => {
+    const handleResize = () => {
+      setIsOpen(window.innerWidth >= 1111)
     }
     handleResize()
 
     window.addEventListener('resize', handleResize)
 
-    return ()=> window.removeEventListener('resize', handleResize)
-  },[])
+    return () => window.removeEventListener('resize', handleResize)
 
-  useEffect(()=>{
-    const el =hiddenContentRef.current
+  }, [])
 
-    if(isOpen){
+  useEffect(() => {
+    const el = hiddenContentRef.current
+
+    if (isOpen) {
       el.style.height = `${el.scrollHeight}px`
-      const onTransitionEnd = ()=>{
-        el.style.height='auto'
-        el.removeEventListener('transitionend', onTransitionEnd)
-      } 
-      el.addEventListener('transitionend', onTransitionEnd)
-  }else {
-
+      const onTranstitionEnd = () => {
+        el.style.height = 'auto'
+        el.removeEventListener('transittionend', onTranstitionEnd)
+      }
+      el.addEventListener('transitionEnd', onTranstitionEnd)
+    }else{
+      el.style.height = `${el.scrollHeight}px`
+      void el.offsetHeight
+      el.style.height='0px'      
     }
-  },[isOpen])
+
+  }, [isOpen])
 
   return (
     <footer className="footer">
@@ -81,7 +85,9 @@ const Footer = () => {
         <div className="right">
 
           {/* 고객센터 */}
-          <div className='cus-wrap'>
+          <div 
+          onClick={()=>setIsOpen(prevStatus =>!prevStatus)}
+          className={`${isOpen? "open":""} cus-wrap`}>
             <h4>
               {customerCenterData.title}
               <span className="m-plus"></span>
@@ -120,7 +126,7 @@ const Footer = () => {
                   target="_blank" rel="noreferrer noopener"
                   aria-label={sns.label}
                   title={sns.label}>
-                  {React.createElement(sns.icon, { size: 22, "aria-hidden": true })}
+                  {React.createElement(sns.icon, { size: 30, "aria-hidden": true })}
                 </a>
               </li>
             ))}
